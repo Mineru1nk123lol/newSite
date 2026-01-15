@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VCheat Pro - Безопасные читы для Standoff 2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+            background-image: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 2px solid #ff4655;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        
+        .logo i {
+            color: #ff4655;
+            font-size: 2.8rem;
+            margin-right: 15px;
+        }
+        
+        .logo-text h1 {
+            font-size: 3.2rem;
+            background: linear-gradient(90deg, #ff4655, #ff8e53);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(255, 70, 85, 0.3);
+        }
+        
+        .logo-text p {
+            color: #aaa;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+        
+        .tagline {
+            font-size: 1.4rem;
+            color: #ddd;
+            margin-top: 10px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .tagline span {
+            color: #ff4655;
+            font-weight: bold;
+        }
+        
+        .safety-section {
+            background-color: rgba(26, 26, 46, 0.8);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-left: 5px solid #00ff88;
+        }
+        
+        .safety-title {
+            font-size: 1.8rem;
+            color: #00ff88;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .safety-title i {
+            margin-right: 10px;
+        }
+        
+        .safety-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .safety-point {
+            background-color: rgba(40, 40, 60, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+        }
+        
+        .safety-point h3 {
+            color: #00ff88;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .payment-process {
+            background-color: rgba(40, 40, 60, 0.7);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 25px;
+        }
+        
+        .payment-process h3 {
+            color: #ff8e53;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .payment-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 15px;
+            margin: 10px;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #ff4655;
+            color: white;
+            border-radius: 50%;
+            line-height: 40px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .tariffs-section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #fff;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: #ff4655;
+        }
+        
+        .tariffs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .tariff-card {
+            background: rgba(26, 26, 46, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tariff-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(255, 70, 85, 0.2);
+            border-color: #ff4655;
+        }
+        
+        .tariff-card.ios {
+            border-top: 5px solid #007aff;
+        }
+        
+        .tariff-card.android {
+            border-top: 5px solid #3ddc84;
+        }
+        
+        .tariff-card.pc {
+            border-top: 5px solid #ff9500;
+        }
+        
+        .tariff-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .ios .tariff-icon {
+            color: #007aff;
+        }
+        
+        .android .tariff-icon {
+            color: #3ddc84;
+        }
+        
+        .pc .tariff-icon {
+            color: #ff9500;
+        }
+        
+        .tariff-name {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        
+        .tariff-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #ff4655;
+        }
+        
+        .tariff-price span {
+            font-size: 1rem;
+            color: #aaa;
+        }
+        
+        .tariff-features {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .tariff-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ddd;
+        }
+        
+        .tariff-features li i {
+            color: #00ff88;
+            margin-right: 10px;
+        }
+        
+        .buy-btn {
+            background: linear-gradient(90deg, #ff4655, #ff8e53);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            letter-spacing: 1px;
+        }
+        
+        .buy-btn:hover {
+            background: linear-gradient(90deg, #ff8e53, #ff4655);
+            box-shadow: 0 5px 15px rgba(255, 70, 85, 0.4);
+        }
+        
+        .purchase-form-container {
+            background-color: rgba(26, 26, 46, 0.9);
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            display: none;
+            border: 2px solid #ff4655;
+        }
+        
+        .form-active {
+            display: block;
+        }
+        
+        .form-title {
+            font-size: 1.8rem;
+            color: #ff4655;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ddd;
+            font-size: 1.1rem;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 15px;
+            background-color: rgba(40, 40, 60, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #ff4655;
+        }
+        
+        .payment-info {
+            background-color: rgba(40, 40, 60, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            border-left: 4px solid #ff4655;
+        }
+        
+        .payment-info h3 {
+            color: #ff8e53;
+            margin-bottom: 15px;
+        }
+        
+        .card-details {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-family: monospace;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            color: #00ff88;
+        }
+        
+        .support {
+            text-align: center;
+            padding: 30px;
+            background-color: rgba(26, 26, 46, 0.8);
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border-top: 2px solid #ff4655;
+        }
+        
+        .support h3 {
+            color: #ff8e53;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .support-email {
+            color: #00ff88;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: rgba(0, 255, 136, 0.1);
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        .warning {
+            color: #ffcc00;
+            font-style: italic;
+            margin-top: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .tariffs {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .purchase-form-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-bolt"></i>
+                <div class="logo-text">
+                    <h1>VCheat Pro</h1>
+                    <p>Премиум читы для Standoff 2</p>
+                </div>
+            </div>
+            <p class="tagline">Стань непобедимым в Standoff 2 с нашим <span>безопасным и незаметным</span> читом</p>
+        </header>
+        
+        <section class="safety-section">
+            <h2 class="safety-title"><i class="fas fa-shield-alt"></i> Почему наш чит безопасен?</h2>
+            <div class="safety-points">
+                <div class="safety-point">
+                    <h3>Скрытность от античита</h3>
+                    <p>Наш чит использует уникальные методы обхода защиты игры, что делает его полностью невидимым для античитов Standoff 2.</p>
+                </div>
+                <div class="safety-point">
+                    <h3>Без вирусов и майнеров</h3>
+                    <p>Программное обеспечение проверено независимыми экспертами и не содержит вредоносного кода или скрытых майнеров.</p>
+                </div>
+                <div class="safety-point">
+                    <h3>Анонимность использования</h3>
+                    <p>Чит не собирает ваши личные данные и не передает информацию о вас третьим лицам.</p>
+                </div>
+            </div>
+            
+            <div class="payment-process">
+                <h3>Что происходит после оплаты?</h3>
+                <p>После успешной оплаты вы получаете чит на указанную вами электронную почту Gmail в течение 5-15 минут. В письме будет:</p>
+                <div class="payment-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <p>Ссылка для скачивания чита</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <p>Детальная инструкция по установке</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <p>Ключ активации и лицензия на 1 месяц</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="tariffs-section">
+            <h2 class="section-title">Выберите тариф для вашего устройства</h2>
+            <div class="tariffs">
+                <div class="tariff-card ios">
+                    <div class="tariff-icon">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <h3 class="tariff-name">iOS версия</h3>
+                    <div class="tariff-price">450 ₽ <span>/ месяц</span></div>
+                    <ul class="tariff-features">
+                        <li><i class="fas fa-check"></i> Полный набор функций</li>
+                        <li><i class="fas fa-check"></i> Авто-прицеливание</li>
+                        <li><i class="fas fa-check"></i> Стена через стены</li>
+                        <li><i class="fas fa-check"></i> Без отдачи</li>
+                        <li><i class="fas fa-check"></i> Вид сзади</li>
+                        <li><i class="fas fa-check"></i> Поддержка iOS 13-16</li>
+                    </ul>
+                    <button class="buy-btn" data-tariff="ios" data-price="450">Купить для iOS</button>
+                </div>
+                
+                <div class="tariff-card android">
+                    <div class="tariff-icon">
+                        <i class="fab fa-android"></i>
+                    </div>
+                    <h3 class="tariff-name">Android версия</h3>
+                    <div class="tariff-price">100 ₽ <span>/ месяц</span></div>
+                    <ul class="tariff-features">
+                        <li><i class="fas fa-check"></i> Полный набор функций</li>
+                        <li><i class="fas fa-check"></i> Авто-прицеливание</li>
+                        <li><i class="fas fa-check"></i> Стена через стены</li>
+                        <li><i class="fas fa-check"></i> Без отдачи</li>
+                        <li><i class="fas fa-check"></i> Вид сзади</li>
+                        <li><i class="fas fa-check"></i> Поддержка Android 8-13</li>
+                    </ul>
+                    <button class="buy-btn" data-tariff="android" data-price="100">Купить для Android</button>
+                </div>
+                
+                <div class="tariff-card pc">
+                    <div class="tariff-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3 class="tariff-name">PC версия</h3>
+                    <div class="tariff-price">80 ₽ <span>/ месяц</span></div>
+                    <ul class="tariff-features">
+                        <li><i class="fas fa-check"></i> Полный набор функций</li>
+                        <li><i class="fas fa-check"></i> Авто-прицеливание</li>
+                        <li><i class="fas fa-check"></i> Стена через стены</li>
+                        <li><i class="fas fa-check"></i> Без отдачи</li>
+                        <li><i class="fas fa-check"></i> Вид сзади</li>
+                        <li><i class="fas fa-check"></i> Поддержка Windows 10/11</li>
+                    </ul>
+                    <button class="buy-btn" data-tariff="pc" data-price="80">Купить для PC</button>
+                </div>
+            </div>
+        </section>
+        
+        <div id="purchaseForm" class="purchase-form-container">
+            <h2 class="form-title">Оформление заказа</h2>
+            <form id="orderForm">
+                <div class="form-group">
+                    <label for="email">Ваш Gmail адрес:</label>
+                    <input type="email" id="email" placeholder="example@gmail.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tariff">Выбранный тариф:</label>
+                    <input type="text" id="tariff" readonly>
+                </div>
+                
+                <div class="form-group">
+                    <label for="price">Сумма к оплате:</label>
+                    <input type="text" id="price" readonly>
+                </div>
+                
+                <div class="payment-info">
+                    <h3>Оплата картой МИР</h3>
+                    <p>Для оплаты переведите указанную сумму на карту МИР:</p>
+                    <div class="card-details">2204 1201 3454 1883</div>
+                    <p>После оплаты нажмите кнопку "Подтвердить оплату". Чит будет отправлен на вашу почту в течение 5-15 минут.</p>
+                    <p class="warning">Важно: в комментарии к переводу укажите ваш Gmail, чтобы мы могли идентифицировать ваш платеж.</p>
+                </div>
+                
+                <button type="submit" class="buy-btn">Подтвердить оплату и получить чит</button>
+            </form>
+        </div>
+        
+        <section class="support">
+            <h3>Временная техническая поддержка продавца</h3>
+            <p>Если у вас возникли проблемы с покупкой или использованием чита, напишите нам:</p>
+            <a href="mailto:mineru13m@gmail.com" class="support-email">mineru13m@gmail.com</a>
+            <p class="warning">Ответ в течение 24 часов. Работаем круглосуточно!</p>
+        </section>
+        
+        <footer>
+            <p>VCheat Pro © 2023. Все права защищены. Standoff 2 является зарегистрированной торговой маркой своего правообладателя.</p>
+            <p>Данный продукт предназначен только для ознакомительного использования.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const buyButtons = document.querySelectorAll('.buy-btn');
+            const purchaseForm = document.getElementById('purchaseForm');
+            const emailInput = document.getElementById('email');
+            const tariffInput = document.getElementById('tariff');
+            const priceInput = document.getElementById('price');
+            const orderForm = document.getElementById('orderForm');
+            
+            buyButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const tariff = this.getAttribute('data-tariff');
+                    const price = this.getAttribute('data-price');
+                    
+                    let tariffName = '';
+                    if (tariff === 'ios') {
+                        tariffName = 'iOS версия';
+                    } else if (tariff === 'android') {
+                        tariffName = 'Android версия';
+                    } else {
+                        tariffName = 'PC версия';
+                    }
+                    
+                    tariffInput.value = tariffName;
+                    priceInput.value = price + ' рублей';
+                    
+                    purchaseForm.classList.add('form-active');
+                    
+                    window.scrollTo({
+                        top: purchaseForm.offsetTop - 50,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            orderForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const email = emailInput.value;
+                const tariff = tariffInput.value;
+                const price = priceInput.value;
+                
+                if (!email.includes('@gmail.com')) {
+                    alert('Пожалуйста, укажите корректный Gmail адрес!');
+                    return;
+                }
+                
+                // Имитация отправки заказа
+                const confirmMessage = `Спасибо за заказ! Чит для ${tariff} будет отправлен на почту ${email} в течение 5-15 минут после проверки платежа. Не забудьте указать ваш Gmail в комментарии к переводу на карту 2204 1201 3454 1883.`;
+                
+                alert(confirmMessage);
+                
+                // Сброс формы
+                emailInput.value = '';
+                purchaseForm.classList.remove('form-active');
+                
+                // Прокрутка к началу
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Закрытие формы при клике вне ее области
+            document.addEventListener('click', function(e) {
+                if (purchaseForm.classList.contains('form-active') && 
+                    !purchaseForm.contains(e.target) && 
+                    !Array.from(buyButtons).some(btn => btn.contains(e.target))) {
+                    
+                    purchaseForm.classList.remove('form-active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
